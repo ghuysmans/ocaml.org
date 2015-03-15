@@ -38,7 +38,7 @@ Que de mots qui n'ont pas vraiment de sens. Voyons plutôt un exemple :
 let double x = x *2 in
 List.map double [ 1; 2; 3 ];;
 ```
-Dans cet exemple, j'ai d'abord définit une fonction imbriquée appelée
+Dans cet exemple, j'ai d'abord défini une fonction imbriquée appelée
 `double` qui prend un argument `x` et qui retourne `x * 2`. Puis `map`
 appelle `double` sur chaque élément de la liste donnée `([1; 2; 3])`
 pour produire le résultat : une liste avec chaque nombre doublé.
@@ -82,7 +82,7 @@ la fonction `multiply`, ainsi disponible au sein de cette fonction.
 Ceci peut paraître un peu trop raccourci, mais regardons de plus près à
 cet appel à `map` : `List.map f list`
 
-`map` est défini dans le module `List`, très loin du code courrant. En
+`map` est défini dans le module `List`, très loin du code courant. En
 d'autres mots, nous passons `f` dans un module défini «a long time ago,
 in a galaxy far far away». Tout ce que nous pouvons savoir c'est que ce
 code peut passer f à d'autres modules ou en garder une référence quelque
@@ -127,7 +127,7 @@ Quelques questions pour les endormis du fond de la classe :
 1. Qu'est-ce que `plus 2 3` ?
 1. Qu'est-ce que `plus 2` ?
 
-La première réponse est facile. `plus` est uen fonction qui prend deux
+La première réponse est facile. `plus` est une fonction qui prend deux
 arguments qui sont entiers et qui retourne un entier. Son type s'écrit
 ainsi :
 
@@ -251,7 +251,7 @@ fonction générique pour appliquer des fonction sur n'importe quel type
 de liste. De la même manière, on peut définir des fonctions génériques
 sur les arbres. Certains types de problèmes d'arithmétique peuvent être
 résolus plus rapidement avec la programmation fonctionnelle (par exemple
-calculer la dérivé d'une fonction mathématique).
+calculer la dérivée d'une fonction mathématique).
 
 ## Programmation fonctionnelle pure et impure
 Une **fonction pure** est une fonction sans aucun **effet de bord**. Un
@@ -281,7 +281,7 @@ for (i = 0; i < strlen(s); ++i) {
     // Du code qui n'affecte pas s
 }
 ```
-Si nativement compilé, la boucle est en O(n²) sur la taille de s parce
+Naïvement compilée, la boucle est en O(n²) sur la taille de `s` parce
 que `strlen(s)` est appelé à chaque fois et `strlen()` doit itérer sur
 tout `s`. Si le compilateur est assez intelligent pour se rendre compte
 que `strlen()` est purement fonctionnel *et* que `s` n'est pas modifié
@@ -300,7 +300,7 @@ top-bottom, mais dans l'opinion de l'auteur, cela résulte souvent à des
 ## Evaluation stricte / paresseuse (strictness vs laziness)
 Les langages dérivés de C et de ML sont stricts. Haskell et Miranda ne
 sont pas stricts, ie ce sont des langages à évaluation paresseuse. OCaml
-est stricte par défaut mais autorise l'évaluation paresseuse lorsque
+est strict par défaut mais autorise l'évaluation paresseuse lorsque
 nécessaire.
 
 Dans un langage à évaluation stricte, les arguments des fonctions sont
